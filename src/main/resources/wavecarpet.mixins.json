@@ -1,0 +1,17 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "wavetech.me.wavecarpet.mixins",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [
+        "ObjectiveCriteria_customCriteriaAccessor",
+        "ObjectiveCriteria_customCriteriaMixin",
+        "PacketUtils_suppressionCountMixin",
+        "ScoreboardCommand_customCriteriaMixin"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+  }
+}

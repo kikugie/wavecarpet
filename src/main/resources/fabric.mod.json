@@ -1,0 +1,25 @@
+{
+    "schemaVersion": 1,
+    "id": "wavecarpet",
+    "version": "${version}",
+    "name": "Wave Carpet",
+    "description": "Additions to carpet by the WaveTech server",
+    "authors": [
+        "VelizarBG"
+    ],
+    "contact": {
+        "repo": "https://github.com/VelizarBG/wavecarpet"
+    },
+    "license": "MIT",
+    "icon": "assets/wavecarpet/icon.png",
+    "environment": "*",
+    "entrypoints": {
+    },
+    "mixins": [
+        "wavecarpet.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": "${loader_dependency}",
+        "minecraft": "${minecraft_dependency}"
+    }
+}
