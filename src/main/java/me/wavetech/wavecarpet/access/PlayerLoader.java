@@ -1,7 +1,11 @@
 package me.wavetech.wavecarpet.access;
 
 public interface PlayerLoader {
-	boolean wavecarpet$getLoadItems();
+	default boolean getLoadItems$wavecarpet() {
+		throw new UnsupportedOperationException("Implemented via mixin");
+	}
 
-	void wavecarpet$setLoadItems(boolean state);
+	default void setLoadItems$wavecarpet(boolean state) {
+		throw new UnsupportedOperationException("Implemented via mixin");
+	}
 }

@@ -18,9 +18,14 @@
     "mixins": [
         "wavecarpet.mixins.json"
     ],
+    "custom": {
+        "loom:injected_interfaces" : {
+            "net/minecraft/class_3222": ["me/wavetech/wavecarpet/access/PlayerLoader"]
+        }
+    },
     "depends": {
         "fabricloader": "${loader_dependency}",
         "minecraft": "${minecraft_dependency}",
-        "carpet": "~1.4"
+        "carpet": "${carpet_dependency}"
     }
 }

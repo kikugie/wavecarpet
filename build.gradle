@@ -18,7 +18,7 @@ repositories {
 		name = "sonatype-oss-snapshots1"
 		url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
 	}
-	maven {
+	maven { // Carpet
 		url "https://masa.dy.fi/maven"
 	}
 }
@@ -48,19 +48,22 @@ dependencies {
 		parchment("org.parchmentmc.data:parchment-1.19.4:2023.06.26@zip")
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "carpet:fabric-carpet:${project.carpet_dependency}"
+
+	modImplementation "carpet:fabric-carpet:${project.carpet_version}"
 }
 
 processResources {
 	inputs.property "version", project.version
 	inputs.property "loader_dependency", project.loader_dependency
 	inputs.property "minecraft_dependency", project.minecraft_dependency
+	inputs.property "carpet_dependency", project.carpet_dependency
 	filteringCharset "UTF-8"
 
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version,
 				"loader_dependency": project.loader_dependency,
-				"minecraft_dependency": project.minecraft_dependency
+				"minecraft_dependency": project.minecraft_dependency,
+				"carpet_dependency": project.carpet_dependency
 	}
 }
 

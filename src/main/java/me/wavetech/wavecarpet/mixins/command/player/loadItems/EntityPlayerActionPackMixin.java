@@ -1,8 +1,7 @@
-package me.wavetech.wavecarpet.mixins.utils;
+package me.wavetech.wavecarpet.mixins.command.player.loadItems;
 
 import carpet.helpers.EntityPlayerActionPack;
 import com.llamalad7.mixinextras.sugar.Local;
-import me.wavetech.wavecarpet.access.PlayerLoader;
 import me.wavetech.wavecarpet.core.InventoryMerger;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
@@ -14,27 +13,21 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Hey, I didn't come up with this naming
-@Mixin(targets = "carpet/helpers/EntityPlayerActionPack$ActionType$1")
-public class CarpetEntityPlayerActionPack_inventoryLoaderMixin {
+@Mixin(targets = "carpet/helpers/EntityPlayerActionPack$ActionType$1") // 1 == USE
+public class EntityPlayerActionPackMixin {
 	@Inject(method = "execute", at = @At(value = "RETURN", ordinal = 2))
 	private void loadItemsInBlock(ServerPlayer player, EntityPlayerActionPack.Action action, CallbackInfoReturnable<Boolean> cir, @Local BlockHitResult target) {
-		if (target != null && player.getLevel().getBlockEntity(target.getBlockPos()) instanceof Container inventory) {
-			transfer(player, inventory);
+		if (player.getLevel().getBlockEntity(target.getBlockPos()) instanceof Container container) {
+			transfer(player, container);
 		}
 	}
 
 	@Unique
-	private void transfer(ServerPlayer player, Container inventory) {
-		if (!inventory.stillValid(player)) {
+	private void transfer(ServerPlayer player, Container container) {
+		if (!container.stillValid(player) || !player.getLoadItems$wavecarpet())
 			return;
-		}
 
-		PlayerLoader playerLoader = (PlayerLoader) player;
-		if (!playerLoader.wavecarpet$getLoadItems()) {
-			return;
-		}
-
-		InventoryMerger.transfer(player.getInventory(), inventory);
+		InventoryMerger.transfer(player.getInventory(), container);
 		player.closeContainer();
 	}
 }
