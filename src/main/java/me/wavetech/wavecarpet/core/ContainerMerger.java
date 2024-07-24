@@ -5,7 +5,7 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 
-public class InventoryMerger {
+public class ContainerMerger {
 	public static void transfer(Container source, Container target) {
 		ArrayList<Integer> sourceSlots = getPopulatedSlots(source);
 		ArrayList<Integer> targetSlots = getAvailableSlots(target);
@@ -55,20 +55,20 @@ public class InventoryMerger {
 		target.setChanged();
 	}
 
-	private static ArrayList<Integer> getAvailableSlots(Container inventory) {
+	private static ArrayList<Integer> getAvailableSlots(Container container) {
 		ArrayList<Integer> availableSlots = new ArrayList<>();
-		for (int i = 0; i < inventory.getContainerSize(); i++) {
-			ItemStack itemStack = inventory.getItem(i);
+		for (int i = 0; i < container.getContainerSize(); i++) {
+			ItemStack itemStack = container.getItem(i);
 			if (itemStack.getCount() >= itemStack.getMaxStackSize()) continue;
 			availableSlots.add(i);
 		}
 		return availableSlots;
 	}
 
-	private static ArrayList<Integer> getPopulatedSlots(Container inventory) {
+	private static ArrayList<Integer> getPopulatedSlots(Container container) {
 		ArrayList<Integer> populatedSlots = new ArrayList<>();
-		for (int i = 0; i < inventory.getContainerSize(); i++) {
-			ItemStack itemStack = inventory.getItem(i);
+		for (int i = 0; i < container.getContainerSize(); i++) {
+			ItemStack itemStack = container.getItem(i);
 			if (itemStack.isEmpty()) continue;
 			populatedSlots.add(i);
 		}

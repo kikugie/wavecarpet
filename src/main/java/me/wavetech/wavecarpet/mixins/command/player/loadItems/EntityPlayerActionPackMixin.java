@@ -2,7 +2,7 @@ package me.wavetech.wavecarpet.mixins.command.player.loadItems;
 
 import carpet.helpers.EntityPlayerActionPack;
 import com.llamalad7.mixinextras.sugar.Local;
-import me.wavetech.wavecarpet.core.InventoryMerger;
+import me.wavetech.wavecarpet.core.ContainerMerger;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.phys.BlockHitResult;
@@ -27,7 +27,7 @@ public class EntityPlayerActionPackMixin {
 		if (!container.stillValid(player) || !player.getLoadItems$wavecarpet())
 			return;
 
-		InventoryMerger.transfer(player.getInventory(), container);
+		ContainerMerger.transfer(player.getInventory(), container);
 		player.closeContainer();
 	}
 }
