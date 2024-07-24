@@ -1,4 +1,4 @@
-package wavetech.me.wavecarpet.mixins;
+package me.wavetech.wavecarpet.mixins.utils.customCriteria;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Share;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Slice;
 
 @Mixin(ScoreboardCommand.class)
-public class ScoreboardCommand_customCriteriaMixin {
+public class ScoreboardCommandMixin {
 	@ModifyExpressionValue(method = "register", at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/arguments/ObjectiveCriteriaArgument;criteria()Lnet/minecraft/commands/arguments/ObjectiveCriteriaArgument;"))
 	private static ObjectiveCriteriaArgument shareCriteriaArgument(ObjectiveCriteriaArgument original, @Share("criteriaArgument") LocalRef<ObjectiveCriteriaArgument> criteriaArgument) {
 		criteriaArgument.set(original);

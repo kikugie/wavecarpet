@@ -1,11 +1,11 @@
-package wavetech.me.wavecarpet.mixins;
+package me.wavetech.wavecarpet.mixins.utils.customCriteria;
 
+import me.wavetech.wavecarpet.core.ObjectiveCriteriaRegistry;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import org.spongepowered.asm.mixin.Mixin;
-import wavetech.me.wavecarpet.core.ObjectiveCriteriaRegistry;
 
 @Mixin(ObjectiveCriteria.class)
-public class ObjectiveCriteria_customCriteriaMixin {
+public class ObjectiveCriteriaMixin {
 	static {
 		ObjectiveCriteriaRegistry.init();
 	}
