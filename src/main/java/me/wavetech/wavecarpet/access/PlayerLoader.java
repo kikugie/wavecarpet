@@ -1,4 +1,4 @@
-package wavetech.me.wavecarpet.access;
+package me.wavetech.wavecarpet.access;
 
 public interface PlayerLoader {
 	boolean wavecarpet$getLoadItems();

@@ -1,9 +1,9 @@
-package wavetech.me.wavecarpet.mixins;
+package me.wavetech.wavecarpet.mixins.utils;
 
 import net.minecraft.server.level.ServerPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import wavetech.me.wavecarpet.access.PlayerLoader;
+import me.wavetech.wavecarpet.access.PlayerLoader;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayer_playerLoaderImplMixin implements PlayerLoader {

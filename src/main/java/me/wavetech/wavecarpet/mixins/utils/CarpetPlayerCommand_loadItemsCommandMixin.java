@@ -1,4 +1,4 @@
-package wavetech.me.wavecarpet.mixins;
+package me.wavetech.wavecarpet.mixins.utils;
 
 import carpet.commands.PlayerCommand;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import wavetech.me.wavecarpet.access.PlayerLoader;
+import me.wavetech.wavecarpet.access.PlayerLoader;
 
 import static net.minecraft.commands.Commands.literal;
 

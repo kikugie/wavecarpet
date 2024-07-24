@@ -1,7 +1,9 @@
-package wavetech.me.wavecarpet.mixins;
+package me.wavetech.wavecarpet.mixins.utils;
 
 import carpet.helpers.EntityPlayerActionPack;
 import com.llamalad7.mixinextras.sugar.Local;
+import me.wavetech.wavecarpet.access.PlayerLoader;
+import me.wavetech.wavecarpet.core.InventoryMerger;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.phys.BlockHitResult;
@@ -10,8 +12,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import wavetech.me.wavecarpet.access.PlayerLoader;
-import wavetech.me.wavecarpet.core.InventoryMerger;
 
 // Hey, I didn't come up with this naming
 @Mixin(targets = "carpet/helpers/EntityPlayerActionPack$ActionType$1")

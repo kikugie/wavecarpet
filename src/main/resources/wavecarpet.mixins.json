@@ -1,16 +1,16 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "wavetech.me.wavecarpet.mixins",
+    "package": "me.wavetech.wavecarpet.mixins",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "CarpetEntityPlayerActionPack_inventoryLoaderMixin",
-        "CarpetPlayerCommand_loadItemsCommandMixin",
-        "ObjectiveCriteria_customCriteriaAccessor",
-        "ObjectiveCriteria_customCriteriaMixin",
-        "PacketUtils_suppressionCountMixin",
-        "ScoreboardCommand_customCriteriaMixin",
-        "ServerPlayer_playerLoaderImplMixin"
+        "feats.suppressionCount.PacketUtilsMixin",
+        "utils.CarpetEntityPlayerActionPack_inventoryLoaderMixin",
+        "utils.CarpetPlayerCommand_loadItemsCommandMixin",
+        "utils.ServerPlayer_playerLoaderImplMixin",
+        "utils.customCriteria.ObjectiveCriteriaAccessor",
+        "utils.customCriteria.ObjectiveCriteriaMixin",
+        "utils.customCriteria.ScoreboardCommandMixin"
     ],
     "client": [
     ],

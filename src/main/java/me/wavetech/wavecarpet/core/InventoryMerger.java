@@ -1,4 +1,4 @@
-package wavetech.me.wavecarpet.core;
+package me.wavetech.wavecarpet.core;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;

@@ -1,7 +1,7 @@
-package wavetech.me.wavecarpet.core;
+package me.wavetech.wavecarpet.core;
 
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
-import wavetech.me.wavecarpet.mixins.ObjectiveCriteria_customCriteriaAccessor;
+import me.wavetech.wavecarpet.mixins.utils.customCriteria.ObjectiveCriteriaAccessor;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ public class ObjectiveCriteriaRegistry {
 	public static final ObjectiveCriteria SUPPRESSION_COUNT = register("suppressionCount");
 
 	private static ObjectiveCriteria register(String name) {
-		var criterion = ObjectiveCriteria_customCriteriaAccessor.callRegisterCustom(name);
+		var criterion = ObjectiveCriteriaAccessor.callRegisterCustom(name);
 		CRITERIA.put(name, criterion);
 		return criterion;
 	}
