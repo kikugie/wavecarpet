@@ -4,14 +4,17 @@
     "package": "wavetech.me.wavecarpet.mixins",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
+        "CarpetEntityPlayerActionPack_inventoryLoaderMixin",
+        "CarpetPlayerCommand_loadItemsCommandMixin",
         "ObjectiveCriteria_customCriteriaAccessor",
         "ObjectiveCriteria_customCriteriaMixin",
         "PacketUtils_suppressionCountMixin",
-        "ScoreboardCommand_customCriteriaMixin"
+        "ScoreboardCommand_customCriteriaMixin",
+        "ServerPlayer_playerLoaderImplMixin"
     ],
     "client": [
     ],
     "injectors": {
         "defaultRequire": 1
-  }
+    }
 }

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.6.11'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,6 +11,9 @@ base {
 }
 
 repositories {
+	maven {
+		url "https://masa.dy.fi/maven"
+	}
 	maven {
 		url = "https://maven.parchmentmc.org"
 	}
@@ -32,8 +35,6 @@ afterEvaluate {
 }
 
 dependencies {
-	vineflowerDecompilerClasspath "org.vineflower:vineflower:1.10.1"
-
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.layered {
@@ -41,6 +42,7 @@ dependencies {
 		parchment("org.parchmentmc.data:parchment-1.19.4:2023.06.26@zip")
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "carpet:fabric-carpet:${project.carpet_dependency}"
 }
 
 processResources {
